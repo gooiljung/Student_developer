@@ -1,5 +1,6 @@
-- Pystagram 기획 - 
-- 
+ 
+## Pystgram 기획  
+
 ### 사진 파트
 
 - 개별 사진 보기 : /photos/<사진 ID="">/
