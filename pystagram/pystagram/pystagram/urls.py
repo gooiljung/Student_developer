@@ -18,6 +18,9 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+
+from photos.views import UserCreateView, UserCreateDone
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('photos/', include('photos.urls')),
@@ -25,6 +28,7 @@ urlpatterns = [
          name='login', kwargs={'template_name':'accounts/login.html'}),
     path('accounts/logout', auth_views.logout, name='logout',
          kwargs={'next_page': settings.LOGIN_URL}),
-
+    path('accounts/create', UserCreateView.as_view(), name='create'),
+    path('accounts/login', UserCreateDone.as_view(), name='create_done')
 ]
 urlpatterns += static('upload_files', document_root=settings.MEDIA_ROOT)

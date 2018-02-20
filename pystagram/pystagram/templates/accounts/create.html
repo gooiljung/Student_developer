@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block content %}
+<form method = "POST" action="{% url 'create' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type = "submit">회원가입</button>
+
+</form>
+{% endblock %}
